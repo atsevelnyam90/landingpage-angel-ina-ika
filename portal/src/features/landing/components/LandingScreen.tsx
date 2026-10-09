@@ -28,6 +28,12 @@ const icons = {
   palette: Palette,
 };
 
+const serviceArtwork: Record<string, string> = {
+  heart: "/images/icons/wedding.png",
+  building: "/images/icons/company-event.png",
+  sparkles: "/images/icons/birthday.png",
+};
+
 function Heading({ label, title }: { label: string; title: string }) {
   return (
     <div className="section-title">
@@ -102,7 +108,7 @@ export function LandingScreen() {
         <section className="angel-section services-one services-area" id="services">
           <div className="container">
             <div className="center-heading">
-              <Heading label="Бидний үйлчилгээ" title="Таны хүсэл. Бидний цогц шийдэл." />
+              <Heading label="Бидний үйлчилгээ" title="БҮХНИЙГ НЭГ ДОР. БҮХНИЙГ АНЖЕЛ EVENT." />
             </div>
             <div className="service-grid">
               {site.services.map((service) => {
@@ -110,12 +116,22 @@ export function LandingScreen() {
                 return (
                   <article className="services-one__single" key={service.title}>
                     <div className="services-one__icon">
-                      <Icon size={30} />
+                      {serviceArtwork[service.icon] ? (
+                        <Image
+                          className="service-artwork"
+                          src={serviceArtwork[service.icon]}
+                          alt=""
+                          width={30}
+                          height={30}
+                        />
+                      ) : (
+                        <Icon size={30} />
+                      )}
                     </div>
                     <h3 className="services-one__title">{service.title}</h3>
                     <p className="services-one__text">{service.text}</p>
                     <a className="services-one__read-more" href="#contact">
-                      Дэлгэрэнгүй ярилцъя <ArrowUpRight size={18} />
+                      Дэлгэрэнгүй харах <ArrowUpRight size={18} />
                     </a>
                   </article>
                 );
@@ -128,13 +144,7 @@ export function LandingScreen() {
           <div className="container">
             <div className="event-one__inner">
               <div className="event-one__top">
-                <Heading
-                  label="Бидний тухай"
-                  title="Зөвхөн арга хэмжээ биш. Бүхэл бүтэн дурсамж."
-                />
-                <a className="thm-btn" href="#contact">
-                  ANGEL EVENT <ArrowUpRight size={20} />
-                </a>
+                <Heading label="Бидний тухай" title="Анжел Ина Ика компаний танилцуулга" />
               </div>
               <div className="customer-introduction">
                 <p>
@@ -148,12 +158,39 @@ export function LandingScreen() {
                   цэнэ, дурсамжийг бүтээнэ.
                 </p>
               </div>
+              <div className="customer-values">
+                <article>
+                  <h3>БИДНИЙ ҮНЭ ЦЭН</h3>
+                  <p>
+                    Бидний хувьд эвент гэдэг нь зөвхөн тайз, хөгжим, чимэглэл биш. Энэ бол хүмүүсийн
+                    инээмсэглэл, догдлол, хамтдаа өнгөрүүлсэн мөч, олон жилийн дараа ч дурсан ярих
+                    дурсамж юм. Тиймээс бид арга хэмжээ бүрийг үйлчлүүлэгчийнхээ онцлогт тохируулан
+                    санаачилгатай, нарийн төлөвлөлттэй, чанартай гүйцэтгэлтэйгээр бүтээдэг.
+                  </p>
+                </article>
+                <article>
+                  <h3>БИДНИЙ ЗОРИЛГО</h3>
+                  <p>
+                    Үйлчлүүлэгч бүрийн хүсэл мөрөөдлийг бодит болгон, өвөрмөц концепц, бүтээлч
+                    санаа, мэргэжлийн зохион байгуулалт, чанартай үйлчилгээгээр үнэ цэнтэй арга
+                    хэмжээг бүтээх.
+                  </p>
+                </article>
+                <article>
+                  <h3>БИДНИЙ АЛСЫН ХАРАА</h3>
+                  <p>
+                    Монголын эвент менежментийн салбарт чанар, бүтээлч байдал, шинэ санаа,
+                    мэргэжлийн зохион байгуулалтаараа тэргүүлэгч, үйлчлүүлэгчдийнхээ итгэлт түнш
+                    болсон Монголын анхны ISO чанарын шаардлага хангасан эвент компани байх.
+                  </p>
+                </article>
+              </div>
               <div className="event-one__img-box customer-event-image">
                 <Image
-                  src="/images/events/leaders.jpg"
-                  alt="Leaders New Year 2025"
-                  width={1170}
-                  height={500}
+                  src="/images/events/bsg-poster.jpg"
+                  alt="Ballet Stars Gala тоглолтын постер"
+                  width={1920}
+                  height={945}
                   sizes="(max-width: 767px) 90vw, 80vw"
                 />
               </div>
@@ -176,7 +213,46 @@ export function LandingScreen() {
         <section className="angel-section why-section" id="benefits">
           <div className="container">
             <div className="event-one__inner">
-              <Heading label="Яагаад Анжел Event?" title="Нэг баг. Нэг хариуцлага." />
+              <div className="customer-values benefits-philosophy">
+                <Heading
+                  label="БИДНИЙ ДАВУУ ТАЛ"
+                  title="БИДНИЙ ФИЛОСОФИ “EVENT IS NOT JUST AN EVENT.”"
+                />
+                <p>
+                  Арга хэмжээ нэг өдөр үргэлжилж болно. Харин тэр өдрийн мэдрэмж, инээмсэглэл,
+                  догдлол, дурсамж олон жил хадгалагдана.
+                </p>
+                <p>
+                  Хөтлөгчөө хаанаас хайх вэ? Хамтлагаа хэн сонгох вэ? Тайз, чимэглэлээ хэн хийх вэ?
+                  Зочдоо хэн угтах вэ? Видео, фото багийг хэн хариуцах вэ?
+                </p>
+                <p>
+                  Та санаа зовох шаардлагагүй.{" "}
+                  <strong>БҮХНИЙГ НЭГ ДОР. БҮХНИЙГ АНЖЕЛ EVENT.</strong>
+                </p>
+              </div>
+              <div className="production-list">
+                {[
+                  "Хөтлөгч",
+                  "Хамтлаг & дуучин",
+                  "DJ & хөгжмийн шийдэл",
+                  "Тайз & чимэглэл",
+                  "Зочин угталт & welcome service",
+                  "Фото & видео баг",
+                  "Гэрэл, дуу, дэлгэц",
+                  "Шоу хөтөлбөр & entertainment",
+                  "Event planning & зохион байгуулалт",
+                ].map((item) => (
+                  <span key={item}>
+                    <Check size={15} />
+                    {item}
+                  </span>
+                ))}
+              </div>
+              <Heading
+                label="ЯАГААД ANGEL EVENT-Г СОНГОХ ВЭ?"
+                title="ТАНЫ МӨЧ. БИДНИЙ САНАА. НАНДИН ДУРСАМЖ."
+              />
               <div className="benefit-grid">
                 {site.benefits.map((benefit, index) => (
                   <article key={benefit.title}>
@@ -186,39 +262,24 @@ export function LandingScreen() {
                   </article>
                 ))}
               </div>
-              <div className="production-list">
-                {[
-                  "Хөтлөгч",
-                  "Хамтлаг & дуучин",
-                  "DJ",
-                  "Тайз & чимэглэл",
-                  "Зочин угталт",
-                  "Фото & видео",
-                  "Гэрэл, дуу, дэлгэц",
-                  "Шоу хөтөлбөр",
-                ].map((item) => (
-                  <span key={item}>
-                    <Check size={15} />
-                    {item}
-                  </span>
-                ))}
-              </div>
+              <p className="benefits-closing">
+                Бид бүхэл бүтэн арга хэмжээг нэг баг, нэг стандарт, нэг хариуцлагаар удирдан зохион
+                байгуулна. Та зөвхөн зочдоо угтаж, баяраа тэмдэглэж, мөчөө мэдрэхэд анхаар. Харин
+                үлдсэн бүхнийг — <strong>АНЖЕЛ EVENT ХАРИУЦНА.</strong>
+              </p>
             </div>
           </div>
         </section>
         <section className="angel-section contact-area" id="contact">
           <div className="container contact-grid">
             <div>
-              <p className="hero-kicker">LET’S CREATE SOMETHING MEMORABLE</p>
+              <p className="hero-kicker">Анжел Event - Дурсамжийг бүтээхийн төлөө ажиллана.</p>
               <h2>
                 Та баяраа мэдэр.
                 <br />
                 <span>Бид бүхнийг зохицуулъя.</span>
               </h2>
               <p>Таны арга хэмжээний санаа, хүсэл, төлөвлөгөөг сонсоход бэлэн байна.</p>
-              <a className="thm-btn" href="tel:+97699108525">
-                Одоо ярилцъя <ArrowUpRight size={20} />
-              </a>
             </div>
             <address>
               <a href="tel:+97699108525">

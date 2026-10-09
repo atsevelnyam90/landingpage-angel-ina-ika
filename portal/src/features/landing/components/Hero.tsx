@@ -87,7 +87,7 @@ export function Hero() {
             <h1 className="main-slider__title">
               Таны баярыг
               <br />
-              <span>мартагдашгүй дурсамж болгоно</span>
+              мартагдашгүй <span>дурсамж болгоно</span>
             </h1>
             <p className="main-slider__text">
               Танд дан ганц зохион байгуулалт биш бүхэл бүтэн дурсамжийг өгнө.
