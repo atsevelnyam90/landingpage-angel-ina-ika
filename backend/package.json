@@ -1,0 +1,10 @@
+{
+  "name": "@winu/example-website-backend",
+  "private": true,
+  "scripts": {
+    "check": "node --check src/server.mjs",
+    "start": "node src/server.mjs"
+  },
+  "type": "module",
+  "version": "0.1.0"
+}
