@@ -1,6 +1,4 @@
-// Replace each demo URL with its corresponding permanent S3/CloudFront URL.
-// These sample clips are demonstrations, not Angel Event portfolio footage.
-const demoVideo = "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4";
+// Public S3 footage; videos load only when a portfolio card is opened.
 export const videos = [
   {
     id: "event-after",
@@ -8,8 +6,8 @@ export const videos = [
     originalFile: "2 after.mp4",
     category: "EVENT HIGHLIGHTS",
     poster: "/images/events/event-after.jpg",
-    src: demoVideo,
-    isDemo: true,
+    src: "https://angel-ina-ika.s3.us-east-1.amazonaws.com/2+after.mp4",
+    isDemo: false,
   },
   {
     id: "event-film",
@@ -17,8 +15,8 @@ export const videos = [
     originalFile: "2.mp4",
     category: "EVENT FILM",
     poster: "/images/events/event-film.jpg",
-    src: demoVideo,
-    isDemo: true,
+    src: "https://angel-ina-ika.s3.us-east-1.amazonaws.com/2.mp4",
+    isDemo: false,
   },
   {
     id: "ballet-after",
@@ -26,8 +24,8 @@ export const videos = [
     originalFile: "BALLET AFTER OK.mp4",
     category: "PERFORMANCE",
     poster: "/images/events/ballet-after.jpg",
-    src: demoVideo,
-    isDemo: true,
+    src: "https://angel-ina-ika.s3.us-east-1.amazonaws.com/BALLET+AFTER+OK.mp4",
+    isDemo: false,
   },
   {
     id: "ballet-short",
@@ -35,8 +33,8 @@ export const videos = [
     originalFile: "Ballet bogino stork.mp4",
     category: "PERFORMANCE",
     poster: "/images/events/ballet-short.jpg",
-    src: demoVideo,
-    isDemo: true,
+    src: "https://angel-ina-ika.s3.us-east-1.amazonaws.com/Ballet+bogino+stork.mp4",
+    isDemo: false,
   },
   {
     id: "bsg",
@@ -44,8 +42,8 @@ export const videos = [
     originalFile: "BSG- 09-05 ok.mp4",
     category: "EVENT HIGHLIGHTS",
     poster: "/images/events/bsg.jpg",
-    src: demoVideo,
-    isDemo: true,
+    src: "https://angel-ina-ika.s3.us-east-1.amazonaws.com/BSG-+09-05+ok.mp4",
+    isDemo: false,
   },
   {
     id: "leaders",
@@ -53,7 +51,13 @@ export const videos = [
     originalFile: "Leaders NY 2025 (1).mp4",
     category: "CORPORATE EVENT",
     poster: "/images/events/leaders.jpg",
-    src: demoVideo,
-    isDemo: true,
+    src: "https://angel-ina-ika.s3.us-east-1.amazonaws.com/Leaders+NY+2025+(1).mp4",
+    isDemo: false,
   },
 ];
+
+export const heroVideo = {
+  src: "https://angel-ina-ika.s3.us-east-1.amazonaws.com/Leaders+NY+2025+(1).mp4",
+  poster: "/images/events/leaders-hero.jpg",
+  endSeconds: 13,
+};

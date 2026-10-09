@@ -1362,3 +1362,107 @@ body {
 html.lenis {
   scroll-behavior: auto;
 }
+
+/* Full viewport Leaders film, with the navigation over the footage. */
+.angel-header.main-header {
+  background: #04000a55;
+  backdrop-filter: blur(10px);
+}
+.video-hero {
+  margin-top: -120px;
+  min-height: 100svh;
+  isolation: isolate;
+}
+.hero-video-background,
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+}
+.hero-video-background {
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+}
+.hero-background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+.hero-background-video.is-ready {
+  opacity: 1;
+}
+.hero-video-overlay {
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, #04000ae8 0%, #04000a9e 42%, #04000a35 100%),
+    linear-gradient(0deg, #04000a8c, transparent 45%);
+}
+.video-hero .swiper-slide {
+  min-height: 100svh;
+  background: transparent;
+  z-index: 2;
+}
+.video-hero .template-hero-grid {
+  display: flex;
+  min-height: 100svh;
+  padding-top: 190px;
+  padding-bottom: 100px;
+  align-items: center;
+}
+.video-hero .main-slider__content {
+  width: min(780px, 100%);
+}
+.video-hero .main-slider__title {
+  font-size: clamp(38px, 4vw, 72px);
+}
+.video-hero .main-slider__text {
+  text-shadow: 0 1px 8px #000;
+}
+.video-hero .hero-motion-control {
+  left: auto;
+  right: 30px;
+  bottom: 30px;
+  background: #04000a66;
+  backdrop-filter: blur(8px);
+}
+@media (max-width: 767px) {
+  .video-hero {
+    margin-top: -90px;
+  }
+  .video-hero .template-hero-grid {
+    padding-top: 150px;
+    padding-bottom: 100px;
+    min-height: 100svh;
+  }
+  .video-hero .main-slider__title {
+    font-size: clamp(29px, 6.5vw, 45px);
+  }
+  .hero-video-overlay {
+    background:
+      linear-gradient(90deg, #04000abb, #04000a66), linear-gradient(0deg, #04000aaa, transparent);
+  }
+  .video-hero .hero-motion-control {
+    right: 20px;
+    bottom: 22px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-background-video {
+    transition: none;
+  }
+}
+
+/* Overlay the header without subtracting its border or breakpoint height. */
+.angel-header.main-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.video-hero {
+  margin-top: 0;
+}

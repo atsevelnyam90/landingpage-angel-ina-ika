@@ -1,21 +1,16 @@
 "use client";
 
 import { ArrowRight, MapPin, Phone } from "lucide-react";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-
-const slides = [
-  { image: "/images/events/event-after.jpg", alt: "Балетын тоглолтын агшин" },
-  { image: "/images/events/leaders.jpg", alt: "Leaders шинэ жилийн баярын агшин" },
-  { image: "/images/events/bsg.jpg", alt: "Тайзны тоглолтын агшин" },
-];
+import { useEffect, useRef, useState } from "react";
+import { heroVideo } from "@/config/videos";
 
 export function Hero() {
-  const [active, setActive] = useState(0);
+  const video = useRef<HTMLVideoElement>(null);
   const [paused, setPaused] = useState(false);
-  const [hovered, setHovered] = useState(false);
-  const [focused, setFocused] = useState(false);
   const [reduced, setReduced] = useState(true);
+  const [ready, setReady] = useState(false);
+  const [failed, setFailed] = useState(false);
+
   useEffect(() => {
     const preference = matchMedia("(prefers-reduced-motion: reduce)");
     const update = () => setReduced(preference.matches);
@@ -23,23 +18,67 @@ export function Hero() {
     preference.addEventListener("change", update);
     return () => preference.removeEventListener("change", update);
   }, []);
+
   useEffect(() => {
-    if (paused || hovered || focused || reduced) return;
-    const timer = window.setInterval(() => setActive((value) => (value + 1) % slides.length), 8000);
-    return () => window.clearInterval(timer);
-  }, [paused, hovered, focused, reduced]);
+    const element = video.current;
+    if (!element) return;
+    if (paused || reduced || failed) {
+      element.pause();
+      return;
+    }
+    let frame: number | undefined;
+    const loopOpening = () => {
+      if (element.currentTime >= heroVideo.endSeconds) {
+        element.currentTime = 0;
+        void element.play().catch(() => setPaused(true));
+      }
+      if (element.requestVideoFrameCallback) frame = element.requestVideoFrameCallback(loopOpening);
+    };
+    void element.play().catch(() => setPaused(true));
+    if (element.requestVideoFrameCallback) frame = element.requestVideoFrameCallback(loopOpening);
+    return () => {
+      if (frame !== undefined) element.cancelVideoFrameCallback(frame);
+      element.pause();
+    };
+  }, [paused, reduced, failed]);
+
   return (
     <section
-      className="main-slider angel-template-hero"
+      className="main-slider angel-template-hero video-hero"
       id="home"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      onFocus={() => setFocused(true)}
-      onBlur={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false);
-      }}
       aria-label="Angel Event танилцуулга"
     >
+      <div
+        className="hero-video-background"
+        style={{ backgroundImage: `url('${heroVideo.poster}')` }}
+      >
+        {!reduced && !failed && (
+          <video
+            ref={video}
+            className={`hero-background-video ${ready ? "is-ready" : ""}`}
+            muted
+            autoPlay
+            playsInline
+            preload="metadata"
+            poster={heroVideo.poster}
+            aria-hidden="true"
+            tabIndex={-1}
+            onLoadedData={() => setReady(true)}
+            onError={() => setFailed(true)}
+            onTimeUpdate={(event) => {
+              if (event.currentTarget.currentTime >= heroVideo.endSeconds)
+                event.currentTarget.currentTime = 0;
+            }}
+            onEnded={(event) => {
+              event.currentTarget.currentTime = 0;
+              if (!paused) void event.currentTarget.play().catch(() => setPaused(true));
+            }}
+          >
+            <source src={heroVideo.src} type="video/mp4" />
+          </video>
+        )}
+      </div>
+      <div className="hero-video-overlay" />
       <div className="swiper-slide swiper-slide-active">
         <div className="container template-hero-grid">
           <div className="main-slider__content">
@@ -70,72 +109,17 @@ export function Hero() {
               </a>
             </div>
           </div>
-          <div className="template-hero-art">
-            <Image
-              className="template-orbit"
-              src="/eventflow/images/shapes/main-slider-shape-1.png"
-              alt=""
-              width={870}
-              height={600}
-            />
-            <Image
-              className="template-dots"
-              src="/eventflow/images/shapes/main-slider-shape-2.png"
-              alt=""
-              width={280}
-              height={210}
-            />
-            <div className="hero-photo-stack">
-              {slides.map((slide, index) => (
-                <Image
-                  key={slide.image}
-                  className={`template-photo ${active === index ? "photo-active" : ""}`}
-                  src={slide.image}
-                  alt={active === index ? slide.alt : ""}
-                  aria-hidden={active !== index}
-                  width={555}
-                  height={600}
-                  priority={index === 0}
-                  sizes="(max-width: 767px) 90vw, 45vw"
-                />
-              ))}
-            </div>
-            <Image
-              className="template-star star-one"
-              src="/eventflow/images/shapes/main-slider-star-1.png"
-              alt=""
-              width={50}
-              height={50}
-            />
-            <Image
-              className="template-star star-two"
-              src="/eventflow/images/shapes/main-slider-star-3.png"
-              alt=""
-              width={50}
-              height={50}
-            />
-          </div>
         </div>
-        <button
-          className="hero-motion-control"
-          type="button"
-          onClick={() => setPaused((value) => !value)}
-          aria-pressed={paused}
-        >
-          {paused ? "Зураг солих хөдөлгөөн үргэлжлүүлэх" : "Зураг солих хөдөлгөөн зогсоох"}
-        </button>
-        <nav className="template-pagination" aria-label="Зураг сонгох">
-          {slides.map((slide, index) => (
-            <button
-              key={slide.image}
-              type="button"
-              onClick={() => setActive(index)}
-              aria-label={`Зураг ${index + 1}`}
-              aria-pressed={active === index}
-              className={active === index ? "is-active" : ""}
-            />
-          ))}
-        </nav>
+        {!reduced && !failed && (
+          <button
+            className="hero-motion-control"
+            type="button"
+            onClick={() => setPaused((value) => !value)}
+            aria-pressed={paused}
+          >
+            {paused ? "Видео үргэлжлүүлэх" : "Видео зогсоох"}
+          </button>
+        )}
       </div>
     </section>
   );

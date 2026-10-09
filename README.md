@@ -17,15 +17,15 @@ For Vercel, select `portal` as the root directory and the Next.js preset.
 - `portal/styles/`: supplied Eventflow CSS bundled by Next.js. `portal/public/eventflow/`: decorative assets. Retain the appropriate template license for publication.
 - `portal/public/images/events/`: compressed still frames extracted from the supplied footage.
 
-## Replace demo videos
+## Portfolio videos
 
-Each video currently plays a public third-party sample clip, clearly labelled as a demo
-inside the player. Replace each `src` in `portal/src/config/videos.ts` with its permanent
-HTTPS S3 or CloudFront URL and set `isDemo` to `false`. `originalFile` identifies the
-corresponding upload. Add captions where the final footage contains speech.
+All six portfolio records point to public MP4 objects in the `angel-ina-ika` S3
+bucket in `us-east-1`. The matching `originalFile` is retained in the video config.
+Replace `src` there when switching to compressed videos or CloudFront delivery.
+All six URLs were checked for public access, MP4 content type, and byte-range support.
 Videos are mounted only when a portfolio card is opened and removed when closed.
-The original multi-hundred-megabyte videos are not included in this repository.
-
+The original large videos are not included in this repository.
+Add verified captions when transcripts become available.
 Contact buttons call the supplied phone numbers or open email. No form backend is
 required. The optional starter backend remains unused.
 

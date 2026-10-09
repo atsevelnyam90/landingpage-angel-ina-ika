@@ -72,7 +72,7 @@ export function VideoGallery() {
             {selected.isDemo && (
               <p className="demo-note">Түр демо видео · Бодит бичлэг удахгүй нэмэгдэнэ.</p>
             )}
-            {/* biome-ignore lint/a11y/useMediaCaption: Temporary third-party demo has no supplied caption file. Add captions alongside final footage. */}
+            {/* biome-ignore lint/a11y/useMediaCaption: No caption transcripts were supplied for this footage. Add verified captions when available. */}
             <video
               key={selected.id}
               controls
