@@ -12,17 +12,17 @@ For Vercel, select `portal` as the root directory and the Next.js preset.
 ## Content
 
 - `portal/src/config/site.ts`: company copy, services, and contact information from the supplied introduction.
-- `portal/src/config/videos.ts`: six video records, original filenames, thumbnails, and playback URLs.
+- `portal/src/config/videos.ts`: twelve video records, original filenames, thumbnails, and playback URLs.
 - `portal/src/features/landing/components/`: page layout and accessible native video dialog.
 - `portal/styles/`: supplied Eventflow CSS bundled by Next.js. `portal/public/eventflow/`: decorative assets. Retain the appropriate template license for publication.
 - `portal/public/images/events/`: compressed still frames extracted from the supplied footage.
 
 ## Portfolio videos
 
-All six portfolio records point to public MP4 objects in the `angel-ina-ika` S3
+All twelve portfolio records point to public MP4 objects in the `angel-ina-ika` S3
 bucket in `us-east-1`. The matching `originalFile` is retained in the video config.
 Replace `src` there when switching to compressed videos or CloudFront delivery.
-All six URLs were checked for public access, MP4 content type, and byte-range support.
+All twelve URLs were checked for public access, MP4 content type, and byte-range support.
 Videos are mounted only when a portfolio card is opened and removed when closed.
 The original large videos are not included in this repository.
 Add verified captions when transcripts become available.
@@ -33,3 +33,6 @@ required. The optional starter backend remains unused.
 
 From `portal`: `pnpm typecheck`, `pnpm lint`, `pnpm build`.
 No deployment has been performed.
+
+Brand artwork from the supplied transparent logos is used in the header, footer,
+and browser icons. Assets live in portal/public/images/brand and portal/public.

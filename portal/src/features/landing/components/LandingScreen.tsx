@@ -69,7 +69,7 @@ export function LandingScreen() {
       <header className="angel-header main-header">
         <div className="container header-inner">
           <a className="angel-brand" href="#home" aria-label="Angel Event нүүр">
-            <Image src="/images/angel-logo.jpg" alt="" width={52} height={52} />
+            <Image src="/images/brand/angel-emblem.png" alt="" width={52} height={52} />
             <span>
               ANGEL <b>EVENT</b>
               <small>ANGEL INA ICA LLC</small>
@@ -257,6 +257,7 @@ export function LandingScreen() {
       <footer className="angel-footer">
         <div className="container">
           <a className="angel-brand" href="#home">
+            <Image src="/images/brand/angel-emblem.png" alt="" width={42} height={42} />
             ANGEL <b>EVENT</b>
           </a>
           <p>© {new Date().getFullYear()} Анжел Ина Ика ХХК.</p>

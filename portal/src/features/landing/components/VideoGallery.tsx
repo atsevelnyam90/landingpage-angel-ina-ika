@@ -42,7 +42,7 @@ export function VideoGallery() {
                 <span>{video.category}</span>
                 <strong>{video.title}</strong>
               </div>
-              <span className="film-number">0{index + 1}</span>
+              <span className="film-number">{String(index + 1).padStart(2, "0")}</span>
               <span className="play-icon">
                 <Play size={23} fill="currentColor" />
               </span>
