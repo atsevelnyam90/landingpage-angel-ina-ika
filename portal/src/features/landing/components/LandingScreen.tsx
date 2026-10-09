@@ -155,7 +155,7 @@ export function LandingScreen() {
         </section>
         <section className="angel-section why-section" id="benefits">
           <div className="container">
-            <div className="event-one__inner">
+            <div className="section-content">
               <div className="customer-values benefits-philosophy">
                 <Heading
                   label="БИДНИЙ ДАВУУ ТАЛ"
@@ -223,7 +223,7 @@ export function LandingScreen() {
         </section>
         <section className="angel-section event-one customer-about" id="about">
           <div className="container">
-            <div className="event-one__inner">
+            <div className="section-content">
               <div className="event-one__top">
                 <Heading label="Бидний тухай" title="Анжел Ина Ика компаний танилцуулга" />
               </div>
