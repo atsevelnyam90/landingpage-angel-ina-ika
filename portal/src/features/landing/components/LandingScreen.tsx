@@ -140,63 +140,6 @@ export function LandingScreen() {
           </div>
         </section>
         <Marquee />
-        <section className="angel-section event-one customer-about" id="about">
-          <div className="container">
-            <div className="event-one__inner">
-              <div className="event-one__top">
-                <Heading label="Бидний тухай" title="Анжел Ина Ика компаний танилцуулга" />
-              </div>
-              <div className="customer-introduction">
-                <p>
-                  Анжел Event нь хурим, найр, байгууллагын ойн баяр, хүлээн авалт, төрсөн өдөр,
-                  нээлт, VIP болон тусгай арга хэмжээг мэргэжлийн түвшинд төлөвлөж, зохион
-                  байгуулдаг эвент менежментийн компани юм.
-                </p>
-                <p>
-                  Бид үйлчлүүлэгчийнхээ хүсэл, хэрэгцээ, онцлогт тулгуурлан санаанаас хэрэгжүүлэлт
-                  хүртэлх бүх үйл явцыг нэг дор шийдэж, үйл явдал бүрт өөрийн гэсэн өнгө төрх, үнэ
-                  цэнэ, дурсамжийг бүтээнэ.
-                </p>
-              </div>
-              <div className="customer-values">
-                <article>
-                  <h3>БИДНИЙ ҮНЭ ЦЭН</h3>
-                  <p>
-                    Бидний хувьд эвент гэдэг нь зөвхөн тайз, хөгжим, чимэглэл биш. Энэ бол хүмүүсийн
-                    инээмсэглэл, догдлол, хамтдаа өнгөрүүлсэн мөч, олон жилийн дараа ч дурсан ярих
-                    дурсамж юм. Тиймээс бид арга хэмжээ бүрийг үйлчлүүлэгчийнхээ онцлогт тохируулан
-                    санаачилгатай, нарийн төлөвлөлттэй, чанартай гүйцэтгэлтэйгээр бүтээдэг.
-                  </p>
-                </article>
-                <article>
-                  <h3>БИДНИЙ ЗОРИЛГО</h3>
-                  <p>
-                    Үйлчлүүлэгч бүрийн хүсэл мөрөөдлийг бодит болгон, өвөрмөц концепц, бүтээлч
-                    санаа, мэргэжлийн зохион байгуулалт, чанартай үйлчилгээгээр үнэ цэнтэй арга
-                    хэмжээг бүтээх.
-                  </p>
-                </article>
-                <article>
-                  <h3>БИДНИЙ АЛСЫН ХАРАА</h3>
-                  <p>
-                    Монголын эвент менежментийн салбарт чанар, бүтээлч байдал, шинэ санаа,
-                    мэргэжлийн зохион байгуулалтаараа тэргүүлэгч, үйлчлүүлэгчдийнхээ итгэлт түнш
-                    болсон Монголын анхны ISO чанарын шаардлага хангасан эвент компани байх.
-                  </p>
-                </article>
-              </div>
-              <div className="event-one__img-box customer-event-image">
-                <Image
-                  src="/images/events/bsg-poster.jpg"
-                  alt="Ballet Stars Gala тоглолтын постер"
-                  width={1920}
-                  height={945}
-                  sizes="(max-width: 767px) 90vw, 80vw"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
         <section className="angel-section" id="portfolio">
           <div className="container">
             <div className="section-top">
@@ -270,6 +213,71 @@ export function LandingScreen() {
             </div>
           </div>
         </section>
+        <section className="angel-section" id="event-hall">
+          <div className="container">
+            <Heading label="Event hall" title="Арга хэмжээний танхим" />
+            <a className="thm-btn" href="#contact">
+              Танхимын талаар лавлах <ArrowUpRight size={20} />
+            </a>
+          </div>
+        </section>
+        <section className="angel-section event-one customer-about" id="about">
+          <div className="container">
+            <div className="event-one__inner">
+              <div className="event-one__top">
+                <Heading label="Бидний тухай" title="Анжел Ина Ика компаний танилцуулга" />
+              </div>
+              <div className="customer-introduction">
+                <p>
+                  Анжел Event нь хурим, найр, байгууллагын ойн баяр, хүлээн авалт, төрсөн өдөр,
+                  нээлт, VIP болон тусгай арга хэмжээг мэргэжлийн түвшинд төлөвлөж, зохион
+                  байгуулдаг эвент менежментийн компани юм.
+                </p>
+                <p>
+                  Бид үйлчлүүлэгчийнхээ хүсэл, хэрэгцээ, онцлогт тулгуурлан санаанаас хэрэгжүүлэлт
+                  хүртэлх бүх үйл явцыг нэг дор шийдэж, үйл явдал бүрт өөрийн гэсэн өнгө төрх, үнэ
+                  цэнэ, дурсамжийг бүтээнэ.
+                </p>
+              </div>
+              <div className="customer-values">
+                <article>
+                  <h3>БИДНИЙ ҮНЭ ЦЭН</h3>
+                  <p>
+                    Бидний хувьд эвент гэдэг нь зөвхөн тайз, хөгжим, чимэглэл биш. Энэ бол хүмүүсийн
+                    инээмсэглэл, догдлол, хамтдаа өнгөрүүлсэн мөч, олон жилийн дараа ч дурсан ярих
+                    дурсамж юм. Тиймээс бид арга хэмжээ бүрийг үйлчлүүлэгчийнхээ онцлогт тохируулан
+                    санаачилгатай, нарийн төлөвлөлттэй, чанартай гүйцэтгэлтэйгээр бүтээдэг.
+                  </p>
+                </article>
+                <article>
+                  <h3>БИДНИЙ ЗОРИЛГО</h3>
+                  <p>
+                    Үйлчлүүлэгч бүрийн хүсэл мөрөөдлийг бодит болгон, өвөрмөц концепц, бүтээлч
+                    санаа, мэргэжлийн зохион байгуулалт, чанартай үйлчилгээгээр үнэ цэнтэй арга
+                    хэмжээг бүтээх.
+                  </p>
+                </article>
+                <article>
+                  <h3>БИДНИЙ АЛСЫН ХАРАА</h3>
+                  <p>
+                    Монголын эвент менежментийн салбарт чанар, бүтээлч байдал, шинэ санаа,
+                    мэргэжлийн зохион байгуулалтаараа тэргүүлэгч, үйлчлүүлэгчдийнхээ итгэлт түнш
+                    болсон Монголын анхны ISO чанарын шаардлага хангасан эвент компани байх.
+                  </p>
+                </article>
+              </div>
+              <div className="event-one__img-box customer-event-image">
+                <Image
+                  src="/images/events/bsg-poster.jpg"
+                  alt="Ballet Stars Gala тоглолтын постер"
+                  width={1920}
+                  height={945}
+                  sizes="(max-width: 767px) 90vw, 80vw"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
         <section className="angel-section contact-area" id="contact">
           <div className="container contact-grid">
             <div>
@@ -312,14 +320,6 @@ export function LandingScreen() {
                 </span>
               </div>
             </address>
-          </div>
-        </section>
-        <section className="angel-section" id="event-hall">
-          <div className="container">
-            <Heading label="Event hall" title="Арга хэмжээний танхим" />
-            <a className="thm-btn" href="#contact">
-              Танхимын талаар лавлах <ArrowUpRight size={20} />
-            </a>
           </div>
         </section>
       </main>

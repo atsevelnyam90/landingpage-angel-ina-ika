@@ -1537,3 +1537,14 @@ html.lenis {
 .why-section .production-list {
   margin-bottom: 48px;
 }
+
+/* Section heading hierarchy shared across the landing page. */
+.section-title .section-title__tagline {
+  font-size: clamp(17px, 1.5vw, 22px);
+  line-height: 1.5;
+  letter-spacing: 1px;
+}
+.section-title .section-title__title {
+  font-size: clamp(26px, 2.6vw, 40px);
+  line-height: 1.25;
+}
