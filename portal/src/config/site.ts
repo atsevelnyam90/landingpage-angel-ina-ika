@@ -6,13 +6,14 @@
     process.env.NEXT_PUBLIC_CONTACT_API_URL ?? "http://localhost:4000/api/v1/public/contact",
   email: "angel_ina_ica@gmail.com",
   phones: ["9910-8525", "8810-6464"],
-  address:
-    "Улаанбаатар хот, Хан-Уул дүүрэг, 15-р хороо, Стадион Оргил /17011/, Regis Place, Yamaha show room",
+  address: "Улаанбаатар хот, Хан-Уул дүүрэг, 15-р хороо, Стадион Оргил /17011/, Regis Place",
   nav: [
     { href: "#about", label: "Бидний тухай" },
     { href: "#services", label: "Үйлчилгээ" },
-    { href: "#portfolio", label: "Бүтээлүүд" },
+    { href: "#portfolio", label: "Эвентүүд" },
+    { href: "#benefits", label: "Бидний давуу тал" },
     { href: "#contact", label: "Холбоо барих" },
+    { href: "#event-hall", label: "Event hall" },
   ],
   services: [
     {

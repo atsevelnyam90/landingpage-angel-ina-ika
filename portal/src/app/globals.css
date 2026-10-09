@@ -1466,3 +1466,27 @@ html.lenis {
 .video-hero {
   margin-top: 0;
 }
+
+/* Keep the expanded customer navigation and address readable. */
+.angel-header .desktop-nav {
+  gap: clamp(14px, 1.4vw, 26px);
+  font-size: 14px;
+}
+.video-hero .main-slider__address {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 14px 25px;
+}
+.video-hero .main-slider__address li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  min-width: 0;
+}
+.video-hero .main-slider__address li:first-child {
+  flex-basis: 100%;
+}
+.video-hero .main-slider__address svg {
+  flex-shrink: 0;
+}

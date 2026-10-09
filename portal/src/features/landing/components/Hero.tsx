@@ -2,6 +2,7 @@
 
 import { ArrowRight, MapPin, Phone } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { site } from "@/config/site";
 import { heroVideo } from "@/config/videos";
 
 export function Hero() {
@@ -86,21 +87,20 @@ export function Hero() {
             <h1 className="main-slider__title">
               Таны баярыг
               <br />
-              <span>дурсамж болгоно.</span>
+              <span>мартагдашгүй дурсамж болгоно</span>
             </h1>
             <p className="main-slider__text">
-              Таны мөч. Бидний санаа. Нандин дурсамж.
-              <br />
-              Арга хэмжээний санаанаас хэрэгжүүлэлт хүртэлх бүхнийг нэг дор.
+              Танд дан ганц зохион байгуулалт биш бүхэл бүтэн дурсамжийг өгнө.
             </p>
             <ul className="main-slider__address">
               <li>
                 <MapPin size={16} />
-                <span>Улаанбаатар, Монгол</span>
+                <span>{site.address}</span>
               </li>
               <li>
                 <Phone size={16} />
                 <a href="tel:+97699108525">9910-8525</a>
+                <a href="tel:+97688106464">8810-6464</a>
               </li>
             </ul>
             <div className="main-slider__btn-box">

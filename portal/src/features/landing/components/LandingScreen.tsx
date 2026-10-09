@@ -83,7 +83,7 @@ export function LandingScreen() {
             ))}
           </nav>
           <a className="header-phone thm-btn" href="#contact">
-            Холбоо барих <ArrowUpRight size={20} />
+            Захиалга өгөх <ArrowUpRight size={20} />
           </a>
           <details className="mobile-nav">
             <summary>Цэс</summary>
@@ -163,7 +163,7 @@ export function LandingScreen() {
         <section className="angel-section" id="portfolio">
           <div className="container">
             <div className="section-top">
-              <Heading label="Бүтээлүүд" title="Мөч өнгөрнө. Дурсамж үлдэнэ." />
+              <Heading label="Эвентүүд" title="Мөч өнгөрнө. Дурсамж үлдэнэ." />
               <p>
                 Баяр, тоглолт, байгууллагын арга хэмжээний
                 <br />
@@ -173,7 +173,7 @@ export function LandingScreen() {
             <VideoGallery />
           </div>
         </section>
-        <section className="angel-section why-section">
+        <section className="angel-section why-section" id="benefits">
           <div className="container">
             <div className="event-one__inner">
               <Heading label="Яагаад Анжел Event?" title="Нэг баг. Нэг хариуцлага." />
@@ -251,6 +251,14 @@ export function LandingScreen() {
                 </span>
               </div>
             </address>
+          </div>
+        </section>
+        <section className="angel-section" id="event-hall">
+          <div className="container">
+            <Heading label="Event hall" title="Арга хэмжээний танхим" />
+            <a className="thm-btn" href="#contact">
+              Танхимын талаар лавлах <ArrowUpRight size={20} />
+            </a>
           </div>
         </section>
       </main>
