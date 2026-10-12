@@ -333,17 +333,19 @@ export function LandingScreen() {
               <p>Таны арга хэмжээний санаа, хүсэл, төлөвлөгөөг сонсоход бэлэн байна.</p>
             </div>
             <address>
-              <a href="tel:+97699108525">
+              <a href={`tel:+976${site.phones[0]}`}>
                 <Phone />
                 <span>
-                  <small>Утас</small>9910-8525
+                  <small>Утас</small>
+                  {site.phones[0]}
                 </span>
                 <ArrowUpRight />
               </a>
-              <a href="tel:+97688106464">
+              <a href={`tel:+976${site.phones[1]}`}>
                 <Phone />
                 <span>
-                  <small>Утас</small>8810-6464
+                  <small>Утас</small>
+                  {site.phones[1]}
                 </span>
                 <ArrowUpRight />
               </a>

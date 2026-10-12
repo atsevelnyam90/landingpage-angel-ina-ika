@@ -2,7 +2,7 @@
 export const videos = [
   {
     id: "event-after",
-    title: "Арга хэмжээний мөчүүд",
+    title: "World Ballet and Dance Grand Prix Mongolia · Онцлох агшнууд",
     originalFile: "2 after.mp4",
     category: "EVENT HIGHLIGHTS",
     poster: "/images/events/event-after.jpg",
@@ -11,7 +11,7 @@ export const videos = [
   },
   {
     id: "event-film",
-    title: "Баярын уур амьсгал",
+    title: "World Ballet and Dance Grand Prix Mongolia · Тэмцээний бичлэг",
     originalFile: "2.mp4",
     category: "EVENT FILM",
     poster: "/images/events/event-film.jpg",
@@ -20,7 +20,7 @@ export const videos = [
   },
   {
     id: "ballet-after",
-    title: "Балет · Тоглолтын мөчүүд",
+    title: "World Ballet and Dance Grand Prix Mongolia · Тоглолтын мөчүүд",
     originalFile: "BALLET AFTER OK.mp4",
     category: "PERFORMANCE",
     poster: "/images/events/ballet-after.jpg",
@@ -29,7 +29,7 @@ export const videos = [
   },
   {
     id: "ballet-short",
-    title: "Балет · Богино түүх",
+    title: "World Ballet and Dance Grand Prix Mongolia · Танилцуулга",
     originalFile: "Ballet bogino stork.mp4",
     category: "PERFORMANCE",
     poster: "/images/events/ballet-short.jpg",
@@ -38,7 +38,7 @@ export const videos = [
   },
   {
     id: "bsg",
-    title: "BSG · Арга хэмжээ",
+    title: "Ballet Stars Gala",
     originalFile: "BSG- 09-05 ok.mp4",
     category: "EVENT HIGHLIGHTS",
     poster: "/images/events/bsg.jpg",
@@ -47,7 +47,7 @@ export const videos = [
   },
   {
     id: "leaders",
-    title: "Leaders · New Year 2025",
+    title: "Leader’s of Mongolia · Шинэ жил 2025",
     originalFile: "Leaders NY 2025 (1).mp4",
     category: "CORPORATE EVENT",
     poster: "/images/events/leaders.jpg",
@@ -56,7 +56,7 @@ export const videos = [
   },
   {
     id: "leaders-mongolia",
-    title: "Leaders of Mongolia · Шинэ жилийн баяр",
+    title: "Leader’s of Mongolia · Шинэ жилийн баяр",
     originalFile: "Leaders of Mongolia NY ok.mp4",
     category: "CORPORATE EVENT",
     poster: "/images/events/leaders-mongolia.jpg",
@@ -74,7 +74,7 @@ export const videos = [
   },
   {
     id: "sm-event",
-    title: "SM · Арга хэмжээ",
+    title: "Сод Монгол · 25 жилийн ой",
     originalFile: "SM 01-31 mon.mp4",
     category: "EVENT FILM",
     poster: "/images/events/sm-event.jpg",
@@ -101,12 +101,35 @@ export const videos = [
   },
   {
     id: "terguun-chansaa",
-    title: "Тэргүүн чансаа · Онцлох агшнууд",
+    title: "Тэргүүн Чансаа · Онцлох агшнууд",
     originalFile: "Terguun chansaa- AFTER (1).mp4",
     category: "EVENT HIGHLIGHTS",
     poster: "/images/events/terguun-chansaa.jpg",
     src: "https://angel-ina-ika.s3.us-east-1.amazonaws.com/Terguun+chansaa-+AFTER+(1).mp4",
     isDemo: false,
+  },
+];
+
+export const videoCategories = [
+  {
+    id: "international",
+    title: "Олон улсын тэмцээн, тоглолт",
+    videoIds: ["bsg", "event-after", "event-film", "ballet-after", "ballet-short"],
+  },
+  {
+    id: "concerts",
+    title: "Хамтлаг дуучдын тоглолт",
+    videoIds: ["serchmaa"],
+  },
+  {
+    id: "new-year",
+    title: "Шинэ жил",
+    videoIds: ["leaders", "leaders-mongolia", "terguun-chansaa"],
+  },
+  {
+    id: "anniversaries",
+    title: "Байгууллагын ой",
+    videoIds: ["terguun-chansaa", "sm-event", "sod-mongol-after", "sod-mongol-film"],
   },
 ];
 

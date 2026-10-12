@@ -4,8 +4,8 @@ export const site = {
     "Хурим, байгууллагын баяр, хүлээн авалт болон тусгай арга хэмжээний төлөвлөлт, зохион байгуулалт. Анжел Ина Ика ХХК.",
   contactApiUrl:
     process.env.NEXT_PUBLIC_CONTACT_API_URL ?? "http://localhost:4000/api/v1/public/contact",
-  email: "angel_ina_ica@gmail.com",
-  phones: ["9910-8525", "8810-6464"],
+  email: "angelinaica88@gmail.com",
+  phones: ["99112817", "99108525"],
   address: "Улаанбаатар хот, Хан-Уул дүүрэг, 15-р хороо, Стадион Оргил /17011/, Regis Place",
   nav: [
     { href: "#about", label: "Бидний тухай" },

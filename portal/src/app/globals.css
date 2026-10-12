@@ -277,7 +277,7 @@ p {
   align-items: center;
   padding-top: 17px;
 }
-.film-caption h3 {
+.film-caption h4 {
   font-size: 17px;
   line-height: 1.4;
   margin: 0;
@@ -1781,4 +1781,13 @@ html.lenis {
   visibility: visible;
   opacity: 1;
   transform: none;
+}
+
+.video-category {
+  margin-top: 56px;
+}
+.video-category-title {
+  margin: 0 0 28px;
+  font-size: clamp(24px, 2.4vw, 32px);
+  line-height: 1.4;
 }

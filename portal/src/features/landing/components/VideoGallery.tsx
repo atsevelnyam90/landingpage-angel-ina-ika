@@ -3,7 +3,7 @@
 import { ArrowUpRight, Play, X } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { videos } from "@/config/videos";
+import { videoCategories, videos } from "@/config/videos";
 
 type Video = (typeof videos)[number];
 
@@ -18,43 +18,57 @@ export function VideoGallery() {
 
   return (
     <>
-      <div className="portfolio-grid">
-        {videos.map((video, index) => (
-          <button
-            className="film-card"
-            key={video.id}
-            type="button"
-            onClick={() => {
-              setFailed(false);
-              setSelected(video);
-            }}
-            aria-label={`${video.title} — видео үзэх`}
-          >
-            <div className="film-image">
-              <Image
-                className="film-photo"
-                src={video.poster}
-                alt=""
-                fill
-                sizes="(max-width: 720px) 90vw, (max-width: 1050px) 45vw, 30vw"
-              />
-              <div className="film-hover-caption">
-                <span>{video.category}</span>
-                <strong>{video.title}</strong>
-              </div>
-              <span className="film-number">{String(index + 1).padStart(2, "0")}</span>
-              <span className="play-icon">
-                <Play size={23} fill="currentColor" />
-              </span>
-              <span className="film-tag">{video.category}</span>
-            </div>
-            <div className="film-caption">
-              <h3>{video.title}</h3>
-              <ArrowUpRight size={22} />
-            </div>
-          </button>
-        ))}
-      </div>
+      {videoCategories.map((category) => (
+        <section
+          className="video-category"
+          key={category.id}
+          aria-labelledby={`video-category-${category.id}`}
+        >
+          <h3 className="video-category-title" id={`video-category-${category.id}`}>
+            {category.title}
+          </h3>
+          <div className="portfolio-grid">
+            {category.videoIds
+              .map((id) => videos.find((video) => video.id === id))
+              .filter((video): video is Video => Boolean(video))
+              .map((video, index) => (
+                <button
+                  className="film-card"
+                  key={video.id}
+                  type="button"
+                  onClick={() => {
+                    setFailed(false);
+                    setSelected(video);
+                  }}
+                  aria-label={`${video.title} — видео үзэх`}
+                >
+                  <div className="film-image">
+                    <Image
+                      className="film-photo"
+                      src={video.poster}
+                      alt=""
+                      fill
+                      sizes="(max-width: 720px) 90vw, (max-width: 1050px) 45vw, 30vw"
+                    />
+                    <div className="film-hover-caption">
+                      <span>{category.title}</span>
+                      <strong>{video.title}</strong>
+                    </div>
+                    <span className="film-number">{String(index + 1).padStart(2, "0")}</span>
+                    <span className="play-icon">
+                      <Play size={23} fill="currentColor" />
+                    </span>
+                    <span className="film-tag">{category.title}</span>
+                  </div>
+                  <div className="film-caption">
+                    <h4>{video.title}</h4>
+                    <ArrowUpRight size={22} />
+                  </div>
+                </button>
+              ))}
+          </div>
+        </section>
+      ))}
       <dialog
         ref={dialog}
         className="video-dialog"
