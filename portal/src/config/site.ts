@@ -9,7 +9,8 @@ export const site = {
   address: "Улаанбаатар хот, Хан-Уул дүүрэг, 15-р хороо, Стадион Оргил /17011/, Regis Place",
   nav: [
     { href: "#about", label: "Бидний тухай" },
-    { href: "#products", label: "Бидний бүтээгдэхүүн" },
+    { href: "#products", label: "Бүтээгдүүн үйлчилгээ" },
+    { href: "#event-hall", label: "Танхим" },
     { href: "#events", label: "Хийсэн ажлууд" },
     { href: "#contact", label: "Холбоо барих" },
   ],
@@ -17,7 +18,6 @@ export const site = {
     { href: "#services", label: "Бидний үйлчилгээ" },
     { href: "#performers", label: "Хамтлаг, дуучин" },
     { href: "#dj", label: "DJ" },
-    { href: "#event-hall", label: "Танхим" },
   ],
   services: [
     {

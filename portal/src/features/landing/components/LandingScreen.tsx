@@ -197,7 +197,7 @@ export function LandingScreen() {
         <section className="angel-section services-one services-area" id="products">
           <div className="container product-heading">
             <Heading
-              label="Бидний бүтээгдэхүүн"
+              label="Бүтээгдүүн үйлчилгээ"
               title="Бид ямар арга хэмжээ зохион байгуулдаг вэ?"
             />
             <div className="service-grid">
@@ -220,9 +220,6 @@ export function LandingScreen() {
                     </div>
                     <h3 className="services-one__title">{service.title}</h3>
                     <p className="services-one__text">{service.text}</p>
-                    <a className="services-one__read-more" href="#contact">
-                      Дэлгэрэнгүй харах <ArrowUpRight size={18} />
-                    </a>
                   </article>
                 );
               })}
@@ -298,13 +295,13 @@ export function LandingScreen() {
               DJ үйлчилгээний талаар лавлах <ArrowUpRight size={20} />
             </a>
           </div>
-          <div className="product-subsection" id="event-hall">
-            <div className="container">
-              <Heading label="Бидний заал" title="Арга хэмжээний танхим" />
-              <a className="thm-btn" href="#contact">
-                Танхимын талаар лавлах <ArrowUpRight size={20} />
-              </a>
-            </div>
+        </section>
+        <section className="angel-section" id="event-hall">
+          <div className="container">
+            <Heading label="Танхим" title="Арга хэмжээний танхим" />
+            <a className="thm-btn" href="#contact">
+              Танхимын талаар лавлах <ArrowUpRight size={20} />
+            </a>
           </div>
         </section>
         <section className="angel-section" id="events">

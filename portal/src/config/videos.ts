@@ -124,7 +124,7 @@ export const videoCategories = [
   {
     id: "new-year",
     title: "Шинэ жил",
-    videoIds: ["leaders", "leaders-mongolia", "terguun-chansaa"],
+    videoIds: ["leaders", "leaders-mongolia"],
   },
   {
     id: "anniversaries",
