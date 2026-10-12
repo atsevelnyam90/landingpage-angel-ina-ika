@@ -1,0 +1,135 @@
+[
+  {
+    "name": "А.Гэрэлцэцэг",
+    "role": "Хөтлөгч, Жүжигчин",
+    "image": "/images/hosts/host-01.jpg",
+    "width": 1451,
+    "height": 1152
+  },
+  {
+    "name": "Б.Ганболор",
+    "role": "Хөтлөгч, Мисс",
+    "image": "/images/hosts/host-02.jpg",
+    "width": 7952,
+    "height": 5304
+  },
+  {
+    "name": "Г.Алтаншагай",
+    "role": "Хөтлөгч, Жүжигчин",
+    "image": "/images/hosts/host-03.jpeg",
+    "width": 1024,
+    "height": 1024
+  },
+  {
+    "name": "Д.Одзаяа",
+    "role": "Хөтлөгч Инфлюзер",
+    "image": "/images/hosts/host-04.jpg",
+    "width": 651,
+    "height": 960
+  },
+  {
+    "name": "Ж.Алтаншагай",
+    "role": "Хөтлөгч, Жүжигчин",
+    "image": "/images/hosts/host-05.jpg",
+    "width": 486,
+    "height": 576
+  },
+  {
+    "name": "И.Төмөрхуяг",
+    "role": "Хөтлөгч, Жүжигчин",
+    "image": "/images/hosts/host-06.jpeg",
+    "width": 1024,
+    "height": 1024
+  },
+  {
+    "name": "М.Баяржаргал",
+    "role": "Хөтлөгч, Комедиан",
+    "image": "/images/hosts/host-07.jpeg",
+    "width": 1024,
+    "height": 1024
+  },
+  {
+    "name": "Н.Амаржаргал",
+    "role": "Хөтлөгч",
+    "image": "/images/hosts/host-08.jpeg",
+    "width": 1125,
+    "height": 1386
+  },
+  {
+    "name": "Н.Ундрал",
+    "role": "Хөтлөгч, Нэвтрүүлэгч",
+    "image": "/images/hosts/host-09.jpeg",
+    "width": 1080,
+    "height": 1082
+  },
+  {
+    "name": "П.Одгэрэл",
+    "role": "Хөтлөгч",
+    "image": "/images/hosts/host-10.jpeg",
+    "width": 1365,
+    "height": 2048
+  },
+  {
+    "name": "С.Чимгээ",
+    "role": "Хөтлөгч, Нэвтрүүлэгч",
+    "image": "/images/hosts/host-11.jpeg",
+    "width": 1125,
+    "height": 1292
+  },
+  {
+    "name": "Т.Шижирбаатар",
+    "role": "Хөтлөгч",
+    "image": "/images/hosts/host-12.jpeg",
+    "width": 1024,
+    "height": 1024
+  },
+  {
+    "name": "Т.Бархүү",
+    "role": "Хөтлөгч, Жүжигчин",
+    "image": "/images/hosts/host-13.jpeg",
+    "width": 1188,
+    "height": 896
+  },
+  {
+    "name": "Х.Бадамгэрэл",
+    "role": "Хөтлөгч, Загвар өмсөгч",
+    "image": "/images/hosts/host-14.jpeg",
+    "width": 864,
+    "height": 1209
+  },
+  {
+    "name": "Ц.Чойжилсүрэн",
+    "role": "Хөтлөгч, Нэвтрүүлэгч",
+    "image": "/images/hosts/host-15.jpg",
+    "width": 431,
+    "height": 536
+  },
+  {
+    "name": "Ш.Мөнхбаяр",
+    "role": "Хөтлөгч, Жүжигчин",
+    "image": "/images/hosts/host-16.jpeg",
+    "width": 1126,
+    "height": 944
+  },
+  {
+    "name": "Э.Ууганбаяр",
+    "role": "Хөтлөгч",
+    "image": "/images/hosts/host-17.jpg",
+    "width": 486,
+    "height": 576
+  },
+  {
+    "name": "Э.Уянга",
+    "role": "Хөтлөгч, Контент бүтээгч",
+    "image": "/images/hosts/host-18.jpg",
+    "width": 480,
+    "height": 404
+  },
+  {
+    "name": "Э.Энхболд",
+    "role": "Хөтлөгч, Загвар өмсөгч",
+    "image": "/images/hosts/host-19.jpg",
+    "width": 934,
+    "height": 934
+  }
+]

@@ -14,11 +14,11 @@ import {
 import Image from "next/image";
 import type { CSSProperties } from "react";
 import { site } from "@/config/site";
+import { HostGallery } from "./HostGallery";
 import { LandingExperience } from "./LandingExperience";
 import { Marquee } from "./Marquee";
 import { MobileNav } from "./MobileNav";
 import { MotionEffects } from "./MotionEffects";
-import { PackageSelection } from "./PackageSelection";
 import { VideoGallery } from "./VideoGallery";
 
 const icons = {
@@ -256,7 +256,7 @@ export function LandingScreen() {
                   </span>
                 ))}
               </div>
-              <PackageSelection />
+              <HostGallery />
               <Heading
                 label="Нэмэлт сонголтууд"
                 title="Арга хэмжээгээ өөрийн хүслээр бүрдүүлээрэй"
