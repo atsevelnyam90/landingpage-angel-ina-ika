@@ -8,11 +8,16 @@ export const site = {
   phones: ["9910-8525", "8810-6464"],
   address: "Улаанбаатар хот, Хан-Уул дүүрэг, 15-р хороо, Стадион Оргил /17011/, Regis Place",
   nav: [
-    { href: "#services", label: "Үйлчилгээ" },
-    { href: "#portfolio", label: "Эвентүүд" },
-    { href: "#benefits", label: "Бидний давуу тал" },
-    { href: "#event-hall", label: "Event hall" },
     { href: "#about", label: "Бидний тухай" },
+    { href: "#products", label: "Бидний бүтээгдэхүүн" },
+    { href: "#events", label: "Хийсэн ажлууд" },
+    { href: "#contact", label: "Холбоо барих" },
+  ],
+  productNav: [
+    { href: "#services", label: "Бидний үйлчилгээ" },
+    { href: "#performers", label: "Хамтлаг, дуучин" },
+    { href: "#dj", label: "DJ" },
+    { href: "#event-hall", label: "Танхим" },
   ],
   services: [
     {
@@ -35,10 +40,31 @@ export const site = {
       title: "VIP & Corporate event",
       text: "Онцгой зочдод зориулсан хүлээн авалт, бизнес арга хэмжээ, тусгай концепц бүхий эвент.",
     },
+  ],
+  entertainmentOptions: [
     {
-      icon: "music",
-      title: "Event багц",
-      text: "Тайз, гэрэл, дуу, дэлгэц, декор, хөтлөгч, DJ, хамтлаг, дуучин, шоу хөтөлбөрийн цогц шийдэл.",
+      title: "Угталт",
+      options: [
+        "Коктейль бар",
+        "Коктейль үйлчлэх бүсгүй",
+        "Улаан хивсний угтагч",
+        "Загвар өмсөгчид",
+        "Циркийн үзүүлбэртэй угталт",
+      ],
+    },
+    {
+      title: "Бүжгийн сонголт",
+      options: [
+        "Карнавал бүжиг",
+        "Тверк бүжиг",
+        "Пол бүжиг",
+        "Монгол үндэсний бүжиг",
+        "К-поп бүжиг",
+      ],
+    },
+    {
+      title: "Бусад",
+      options: ["Циркийн үзүүлбэр", "Өвлийн өвгөн", "Экстрим үзүүлбэр"],
     },
   ],
   benefits: [

@@ -1,11 +1,10 @@
 "use client";
 
-import { ArrowRight, MapPin, Phone } from "lucide-react";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { site } from "@/config/site";
 import { heroVideo } from "@/config/videos";
 
-export function Hero() {
+export function Hero({ onEnter }: { onEnter: () => void }) {
   const video = useRef<HTMLVideoElement>(null);
   const [paused, setPaused] = useState(false);
   const [reduced, setReduced] = useState(true);
@@ -45,7 +44,7 @@ export function Hero() {
 
   return (
     <section
-      className="main-slider angel-template-hero video-hero"
+      className="main-slider angel-template-hero video-hero welcome-hero"
       id="home"
       aria-label="Angel Event танилцуулга"
     >
@@ -83,44 +82,29 @@ export function Hero() {
       <div className="swiper-slide swiper-slide-active">
         <div className="container template-hero-grid">
           <div className="main-slider__content">
-            <p className="main-slider__sub-title">ANGEL EVENT</p>
+            <Image
+              className="welcome-logo"
+              src="/images/brand/angel-emblem.png"
+              alt="Анжел Event лого"
+              width={260}
+              height={260}
+              priority
+            />
+            <p className="main-slider__sub-title">АНЖЕЛ ИНА ИКА ХХК</p>
             <h1 className="main-slider__title">
-              Таны баярыг
-              <br />
-              мартагдашгүй <span>дурсамж болгоно</span>
+              ANGEL <span>EVENT</span>
             </h1>
-            <p className="main-slider__text">
-              Танд дан ганц зохион байгуулалт биш бүхэл бүтэн дурсамжийг өгнө.
-            </p>
-            <ul className="main-slider__address">
-              <li>
-                <MapPin size={16} />
-                <span>{site.address}</span>
-              </li>
-              <li>
-                <Phone size={16} />
-                <a href="tel:+97699108525">9910-8525</a>
-                <a href="tel:+97688106464">8810-6464</a>
-              </li>
-            </ul>
-            <div className="main-slider__btn-box">
-              <a href="#contact" className="thm-btn">
-                Хамтдаа төлөвлөе <ArrowRight size={21} />
-              </a>
-            </div>
+            <p className="main-slider__text">Тавтай морилно уу</p>
+            <p className="welcome-hint">Үргэлжлүүлэхийн тулд дэлгэц дээр дарна уу</p>
           </div>
         </div>
-        {!reduced && !failed && (
-          <button
-            className="hero-motion-control"
-            type="button"
-            onClick={() => setPaused((value) => !value)}
-            aria-pressed={paused}
-          >
-            {paused ? "Видео үргэлжлүүлэх" : "Видео зогсоох"}
-          </button>
-        )}
       </div>
+      <button
+        className="welcome-enter"
+        type="button"
+        onClick={onEnter}
+        aria-label="Тавтай морилно уу. Вэбсайт руу нэвтрэх"
+      />
     </section>
   );
 }

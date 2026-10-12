@@ -14,9 +14,11 @@ import {
 import Image from "next/image";
 import type { CSSProperties } from "react";
 import { site } from "@/config/site";
-import { Hero } from "./Hero";
+import { LandingExperience } from "./LandingExperience";
 import { Marquee } from "./Marquee";
+import { MobileNav } from "./MobileNav";
 import { MotionEffects } from "./MotionEffects";
+import { PackageSelection } from "./PackageSelection";
 import { VideoGallery } from "./VideoGallery";
 
 const icons = {
@@ -67,14 +69,14 @@ function Heading({ label, title }: { label: string; title: string }) {
 
 export function LandingScreen() {
   return (
-    <>
+    <LandingExperience>
       <MotionEffects />
       <a className="skip-link" href="#main">
         Үндсэн агуулга руу
       </a>
       <header className="angel-header main-header">
         <div className="container header-inner">
-          <a className="angel-brand" href="#home" aria-label="Angel Event нүүр">
+          <a className="angel-brand" href="#about" aria-label="Angel Event нүүр">
             <Image src="/images/brand/angel-emblem.png" alt="" width={52} height={52} />
             <span>
               ANGEL <b>EVENT</b>
@@ -88,144 +90,15 @@ export function LandingScreen() {
               </a>
             ))}
           </nav>
-          <a className="header-phone thm-btn" href="#contact">
-            Захиалга өгөх <ArrowUpRight size={20} />
-          </a>
-          <details className="mobile-nav">
-            <summary>Цэс</summary>
-            <nav aria-label="Гар утасны цэс">
-              {site.nav.map((item) => (
-                <a key={item.href} href={item.href}>
-                  {item.label}
-                </a>
-              ))}
-            </nav>
-          </details>
+          <MobileNav />
         </div>
       </header>
-      <main id="main">
-        <Hero />
-        <section className="angel-section services-one services-area" id="services">
-          <div className="container">
-            <div className="center-heading">
-              <Heading label="Бидний үйлчилгээ" title="БҮХНИЙГ НЭГ ДОР. БҮХНИЙГ АНЖЕЛ EVENT." />
-            </div>
-            <div className="service-grid">
-              {site.services.map((service) => {
-                const Icon = icons[service.icon as keyof typeof icons];
-                return (
-                  <article className="services-one__single" key={service.title}>
-                    <div className="services-one__icon">
-                      {serviceArtwork[service.icon] ? (
-                        <Image
-                          className="service-artwork"
-                          src={serviceArtwork[service.icon]}
-                          alt=""
-                          width={30}
-                          height={30}
-                        />
-                      ) : (
-                        <Icon size={30} />
-                      )}
-                    </div>
-                    <h3 className="services-one__title">{service.title}</h3>
-                    <p className="services-one__text">{service.text}</p>
-                    <a className="services-one__read-more" href="#contact">
-                      Дэлгэрэнгүй харах <ArrowUpRight size={18} />
-                    </a>
-                  </article>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-        <Marquee />
-        <section className="angel-section" id="portfolio">
-          <div className="container">
-            <div className="section-top">
-              <Heading label="Эвентүүд" title="Мөч өнгөрнө. Дурсамж үлдэнэ." />
-              <p>
-                Баяр, тоглолт, байгууллагын арга хэмжээний
-                <br />
-                онцлох агшнуудтай танилцаарай.
-              </p>
-            </div>
-            <VideoGallery />
-          </div>
-        </section>
-        <section className="angel-section why-section" id="benefits">
-          <div className="container">
-            <div className="section-content">
-              <div className="customer-values benefits-philosophy">
-                <Heading
-                  label="БИДНИЙ ДАВУУ ТАЛ"
-                  title="БИДНИЙ ФИЛОСОФИ “EVENT IS NOT JUST AN EVENT.”"
-                />
-                <p>
-                  Арга хэмжээ нэг өдөр үргэлжилж болно. Харин тэр өдрийн мэдрэмж, инээмсэглэл,
-                  догдлол, дурсамж олон жил хадгалагдана.
-                </p>
-                <p>
-                  Хөтлөгчөө хаанаас хайх вэ? Хамтлагаа хэн сонгох вэ? Тайз, чимэглэлээ хэн хийх вэ?
-                  Зочдоо хэн угтах вэ? Видео, фото багийг хэн хариуцах вэ?
-                </p>
-                <p>
-                  Та санаа зовох шаардлагагүй.{" "}
-                  <strong>БҮХНИЙГ НЭГ ДОР. БҮХНИЙГ АНЖЕЛ EVENT.</strong>
-                </p>
-              </div>
-              <div className="production-list">
-                {[
-                  "Хөтлөгч",
-                  "Хамтлаг & дуучин",
-                  "DJ & хөгжмийн шийдэл",
-                  "Тайз & чимэглэл",
-                  "Зочин угталт & welcome service",
-                  "Фото & видео баг",
-                  "Гэрэл, дуу, дэлгэц",
-                  "Шоу хөтөлбөр & entertainment",
-                  "Event planning & зохион байгуулалт",
-                ].map((item) => (
-                  <span key={item}>
-                    <Check size={15} />
-                    {item}
-                  </span>
-                ))}
-              </div>
-              <Heading
-                label="ЯАГААД ANGEL EVENT-Г СОНГОХ ВЭ?"
-                title="ТАНЫ МӨЧ. БИДНИЙ САНАА. НАНДИН ДУРСАМЖ."
-              />
-              <div className="benefit-grid">
-                {site.benefits.map((benefit, index) => (
-                  <article key={benefit.title}>
-                    <span className="benefit-number">0{index + 1}</span>
-                    <h3>{benefit.title}</h3>
-                    <p>{benefit.text}</p>
-                  </article>
-                ))}
-              </div>
-              <p className="benefits-closing">
-                Бид бүхэл бүтэн арга хэмжээг нэг баг, нэг стандарт, нэг хариуцлагаар удирдан зохион
-                байгуулна. Та зөвхөн зочдоо угтаж, баяраа тэмдэглэж, мөчөө мэдрэхэд анхаар. Харин
-                үлдсэн бүхнийг — <strong>АНЖЕЛ EVENT ХАРИУЦНА.</strong>
-              </p>
-            </div>
-          </div>
-        </section>
-        <section className="angel-section" id="event-hall">
-          <div className="container">
-            <Heading label="Event hall" title="Арга хэмжээний танхим" />
-            <a className="thm-btn" href="#contact">
-              Танхимын талаар лавлах <ArrowUpRight size={20} />
-            </a>
-          </div>
-        </section>
+      <main id="main" tabIndex={-1}>
         <section className="angel-section event-one customer-about" id="about">
           <div className="container">
             <div className="section-content">
               <div className="event-one__top">
-                <Heading label="Бидний тухай" title="Анжел Ина Ика компаний танилцуулга" />
+                <Heading label="Бидний тухай" title="Анжел Ина Ика компанийн танилцуулга" />
               </div>
               <div className="customer-introduction">
                 <p>
@@ -277,10 +150,180 @@ export function LandingScreen() {
               </div>
             </div>
           </div>
+          <div className="why-section" id="benefits">
+            <div className="container">
+              <div className="section-content">
+                <div className="customer-values benefits-philosophy">
+                  <Heading
+                    label="БИДНИЙ ДАВУУ ТАЛ"
+                    title="БИДНИЙ ФИЛОСОФИ “EVENT IS NOT JUST AN EVENT.”"
+                  />
+                  <p>
+                    Арга хэмжээ нэг өдөр үргэлжилж болно. Харин тэр өдрийн мэдрэмж, инээмсэглэл,
+                    догдлол, дурсамж олон жил хадгалагдана.
+                  </p>
+                  <p>
+                    Хөтлөгчөө хаанаас хайх вэ? Хамтлагаа хэн сонгох вэ? Тайз, чимэглэлээ хэн хийх
+                    вэ? Зочдоо хэн угтах вэ? Видео, фото багийг хэн хариуцах вэ?
+                  </p>
+                  <p>
+                    Та санаа зовох шаардлагагүй.{" "}
+                    <strong>БҮХНИЙГ НЭГ ДОР. БҮХНИЙГ АНЖЕЛ EVENT.</strong>
+                  </p>
+                </div>
+                <Heading
+                  label="ЯАГААД ANGEL EVENT-Г СОНГОХ ВЭ?"
+                  title="ТАНЫ МӨЧ. БИДНИЙ САНАА. НАНДИН ДУРСАМЖ."
+                />
+                <div className="benefit-grid">
+                  {site.benefits.map((benefit, index) => (
+                    <article key={benefit.title}>
+                      <span className="benefit-number">0{index + 1}</span>
+                      <h3>{benefit.title}</h3>
+                      <p>{benefit.text}</p>
+                    </article>
+                  ))}
+                </div>
+                <p className="benefits-closing">
+                  Бид бүхэл бүтэн арга хэмжээг нэг баг, нэг стандарт, нэг хариуцлагаар удирдан
+                  зохион байгуулна. Та зөвхөн зочдоо угтаж, баяраа тэмдэглэж, мөчөө мэдрэхэд анхаар.
+                  Харин үлдсэн бүхнийг — <strong>АНЖЕЛ EVENT ХАРИУЦНА.</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <Marquee />
+        <section className="angel-section services-one services-area" id="products">
+          <div className="container product-heading">
+            <Heading
+              label="Бидний бүтээгдэхүүн"
+              title="Бид ямар арга хэмжээ зохион байгуулдаг вэ?"
+            />
+            <div className="service-grid">
+              {site.services.map((service) => {
+                const Icon = icons[service.icon as keyof typeof icons];
+                return (
+                  <article className="services-one__single" key={service.title}>
+                    <div className="services-one__icon">
+                      {serviceArtwork[service.icon] ? (
+                        <Image
+                          className="service-artwork"
+                          src={serviceArtwork[service.icon]}
+                          alt=""
+                          width={30}
+                          height={30}
+                        />
+                      ) : (
+                        <Icon size={30} />
+                      )}
+                    </div>
+                    <h3 className="services-one__title">{service.title}</h3>
+                    <p className="services-one__text">{service.text}</p>
+                    <a className="services-one__read-more" href="#contact">
+                      Дэлгэрэнгүй харах <ArrowUpRight size={18} />
+                    </a>
+                  </article>
+                );
+              })}
+            </div>
+            <nav className="product-nav" aria-label="Бүтээгдэхүүний ангилал">
+              {site.productNav.map((item) => (
+                <a key={item.href} href={item.href}>
+                  {item.label}
+                </a>
+              ))}
+            </nav>
+          </div>
+          <div className="product-subsection" id="services">
+            <div className="container">
+              <Heading label="Бидний үйлчилгээ" title="БҮХНИЙГ НЭГ ДОР. БҮХНИЙГ АНЖЕЛ EVENT." />
+              <div className="production-list">
+                {[
+                  "Хөтлөгч",
+                  "Хамтлаг & дуучин",
+                  "DJ & хөгжмийн шийдэл",
+                  "Тайз & чимэглэл",
+                  "Зочин угталт",
+                  "Фото & видео баг",
+                  "Гэрэл, дуу, дэлгэц",
+                  "Шоу хөтөлбөр",
+                  "Арга хэмжээний төлөвлөлт, зохион байгуулалт",
+                ].map((item) => (
+                  <span key={item}>
+                    <Check size={15} />
+                    {item}
+                  </span>
+                ))}
+              </div>
+              <PackageSelection />
+              <Heading
+                label="Нэмэлт сонголтууд"
+                title="Арга хэмжээгээ өөрийн хүслээр бүрдүүлээрэй"
+              />
+              <div className="entertainment-grid">
+                {site.entertainmentOptions.map((group) => (
+                  <article className="entertainment-option" key={group.title}>
+                    <h3>{group.title}</h3>
+                    <ul>
+                      {group.options.map((option) => (
+                        <li key={option}>
+                          <Check size={16} aria-hidden="true" />
+                          {option}
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                ))}
+              </div>
+              <a className="thm-btn" href="#contact">
+                Үйлчилгээний талаар лавлах <ArrowUpRight size={20} />
+              </a>
+            </div>
+          </div>
+          <div className="container product-subsection" id="performers">
+            <Heading label="Хамтлаг, дуучин" title="Арга хэмжээний хөгжмийн хөтөлбөр" />
+            <p>Арга хэмжээнийхээ онцлог, хүсэлд нийцүүлэн хамтлаг, дуучны үзүүлбэрийг сонгоорой.</p>
+            <a className="thm-btn" href="#contact">
+              Хамтлаг, дуучны талаар лавлах <ArrowUpRight size={20} />
+            </a>
+          </div>
+          <div className="container product-subsection" id="dj">
+            <Heading label="DJ" title="Хөгжим, уур амьсгалын шийдэл" />
+            <p>
+              Арга хэмжээний хөтөлбөрт тохирсон DJ болон хөгжмийн шийдлийг бидэнтэй хамт
+              төлөвлөөрэй.
+            </p>
+            <a className="thm-btn" href="#contact">
+              DJ үйлчилгээний талаар лавлах <ArrowUpRight size={20} />
+            </a>
+          </div>
+          <div className="product-subsection" id="event-hall">
+            <div className="container">
+              <Heading label="Бидний заал" title="Арга хэмжээний танхим" />
+              <a className="thm-btn" href="#contact">
+                Танхимын талаар лавлах <ArrowUpRight size={20} />
+              </a>
+            </div>
+          </div>
+        </section>
+        <section className="angel-section" id="events">
+          <div className="container">
+            <div className="section-top">
+              <Heading label="Хийсэн ажлууд" title="Мөч өнгөрнө. Дурсамж үлдэнэ." />
+              <p>
+                Баяр, тоглолт, байгууллагын арга хэмжээний
+                <br />
+                онцлох агшнуудтай танилцаарай.
+              </p>
+            </div>
+            <VideoGallery />
+          </div>
         </section>
         <section className="angel-section contact-area" id="contact">
           <div className="container contact-grid">
             <div>
+              <p className="hero-kicker">Холбоо барих</p>
               <p className="hero-kicker">Анжел Event - Дурсамжийг бүтээхийн төлөө ажиллана.</p>
               <h2>
                 Та баяраа мэдэр.
@@ -325,14 +368,14 @@ export function LandingScreen() {
       </main>
       <footer className="angel-footer">
         <div className="container">
-          <a className="angel-brand" href="#home">
+          <a className="angel-brand" href="#about">
             <Image src="/images/brand/angel-emblem.png" alt="" width={42} height={42} />
             ANGEL <b>EVENT</b>
           </a>
           <p>© {new Date().getFullYear()} Анжел Ина Ика ХХК.</p>
-          <a href="#home">Эхлэл рүү ↑</a>
+          <a href="#about">Эхлэл рүү ↑</a>
         </div>
       </footer>
-    </>
+    </LandingExperience>
   );
 }
